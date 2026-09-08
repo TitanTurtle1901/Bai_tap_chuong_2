@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tạo form và các điều khiển trên form</title>
+<meta charset="UTF-8">
+<style>
+    body { font-family: Arial, sans-serif; }
+    table {
+        border: 2px solid #99CCFF;
+        border-collapse: collapse;
+        width: 350px;
+        background-color: #DDEEFF;
+    }
+    td { padding: 6px; }
+    h2.title {
+        text-align: center;
+        color: #A0522D;
+        font-family: "Times New Roman", serif;
+        font-size: 28px;
+    }
+    input[type=text], input[type=password] {
+        width: 150px;
+    }
+    input[type=button] {
+        background-color: #DDEEFF;
+        border: 1px solid #99CCFF;
+    }
+    #lblKetQua {
+        color: #0000CC;
+        font-weight: bold;
+        padding-top: 5px;
+    }
+</style>
+</head>
+<body>
+
+<form id="frmDangNhap">
+<table align="center">
+    <tr>
+        <td colspan="2"><h2 class="title">Đăng nhập</h2></td>
+    </tr>
+    <tr>
+        <td>Mã người dùng:</td>
+        <td><input type="text" id="txtMaND" size="20"></td>
+    </tr>
+    <tr>
+        <td>Mật khẩu:</td>
+        <td><input type="password" id="txtMatKhau" size="20"></td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            <input type="button" id="btnDongY" value="Đồng ý" onclick="XuLyDangNhap()">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div id="lblKetQua"></div>
+        </td>
+    </tr>
+</table>
+</form>
+
+<script>
+function XuLyDangNhap() {
+    var maND = document.getElementById("txtMaND").value;
+    document.getElementById("lblKetQua").innerText = maND;
+}
+</script>
+
+</body>
+</html>
