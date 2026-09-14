@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tạo form và các điều khiển</title>
+<meta charset="UTF-8">
+<style>
+    body { font-family: Arial, sans-serif; }
+    table {
+        border: 1px solid #CCCC99;
+        border-collapse: collapse;
+        width: 650px;
+        background-color: #FFFFCC;
+    }
+    td { padding: 6px; border: 1px solid #CCCC99; }
+    h2.title {
+        text-align: center;
+        color: #4A7EBB;
+        font-family: "Times New Roman", serif;
+    }
+    input[type=text] { width: 250px; }
+    textarea { width: 300px; height: 60px; }
+    fieldset {
+        border: 1px solid #A52A2A;
+        width: 350px;
+        height: 55px;
+    }
+    legend {
+        color: #A52A2A;
+        font-style: italic;
+    }
+    input[type=button] {
+        background-color: #FFFFCC;
+        border: 1px solid #CCCC99;
+    }
+    #lblThongBao {
+        text-align: center;
+        color: #FF6600;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+<form id="frmDangKyDuLich">
+<table align="center" cellpadding="5" cellspacing="0">
+    <tr>
+        <td colspan="2"><h2 class="title">Đăng ký du lịch</h2></td>
+    </tr>
+    <tr>
+        <td>Họ và tên</td>
+        <td><input type="text" id="txtHoTen"></td>
+    </tr>
+    <tr>
+        <td>Địa chỉ</td>
+        <td><input type="text" id="txtDiaChi"></td>
+    </tr>
+    <tr>
+        <td>Điện thoại</td>
+        <td><input type="text" id="txtDienThoai"></td>
+    </tr>
+    <tr>
+        <td>Khách Việt Nam</td>
+        <td><input type="checkbox" id="chkVietNam" checked></td>
+    </tr>
+    <tr>
+        <td>Chọn tour</td>
+        <td>
+            <select id="ddChonTour">
+                <optgroup label="Miền Bắc">
+                    <option value="Ha Noi - Ha Long - Sapa">Hạ Nội - Hạ Long - Sapa</option>
+                    <option value="Ha Noi - Chua Huong - Ninh Binh">Hạ Nội - Chùa Hương - Ninh Bình</option>
+                    <option value="Ha Noi - Cat Ba - Tuan Chau">Hạ Nội - Cát Bà - Tuần Châu</option>
+                </optgroup>
+                <optgroup label="Miền Trung">
+                    <option value="Hue - Bach Ma - Da Nang">Huế - Bạch Mã - Đà Nẵng</option>
+                    <option value="Nha Trang - Da Lat">Nha Trang - Đà Lạt</option>
+                    <option value="Buon Me Thuot - Gia Lai - Kontum" selected>Buôn Mê Thuột - Gia Lai - Kontum</option>
+                </optgroup>
+                <optgroup label="Miền Nam">
+                    <option value="TP.HCM - Can Tho - Ca Mau">TP.HCM - Cần Thơ - Cà Mau</option>
+                    <option value="TP.HCM - My Tho">TP.HCM - Mỹ Tho</option>
+                </optgroup>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Phương tiện</td>
+        <td>
+            <input type="radio" name="rdPhuongTien" id="rdMayBay" value="Máy bay"> Máy bay
+            <input type="radio" name="rdPhuongTien" id="rdXeOto" value="Xe ô tô" checked> Xe ô tô
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <fieldset>
+                <legend align="center">Số lượng đoàn khách</legend>
+                Người lớn <input type="text" id="txtNguoiLon" size="5">
+                &nbsp;&nbsp;
+                Trẻ em <input type="text" id="txtTreEm" size="5">
+            </fieldset>
+        </td>
+    </tr>
+    <tr>
+        <td>Ghi chú thêm</td>
+        <td><textarea id="txtGhiChu"></textarea></td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            <input type="button" id="btnDongY" value="Đồng ý" onclick="XuLyDangKy()">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div id="lblThongBao"></div>
+        </td>
+    </tr>
+</table>
+</form>
+
+<script>
+function XuLyDangKy() {
+    document.getElementById("lblThongBao").innerText = "Bạn đã đăng ký thành công!!!";
+}
+</script>
+
+</body>
+</html>
